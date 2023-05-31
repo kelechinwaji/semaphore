@@ -2,6 +2,8 @@ import express, { Request, Response } from 'express';
 
 // Create an Express application
 const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 // Define a route
 app.get('/', (req: Request, res: Response) => {
