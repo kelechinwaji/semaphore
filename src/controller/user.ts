@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 import { Request, Response } from "express";
-import { User, UserData } from "../database/models";
+import { User, UserData } from "../database/user.models";
 
 export const createUser = async (req: Request, res: Response) => {
   const { name, email, password } = req.body;
