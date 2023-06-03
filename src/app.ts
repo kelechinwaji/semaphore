@@ -2,7 +2,6 @@ import express, { Request, Response } from 'express';
 import connectToMongo from './database/connect';
 
 
-
 // Create an Express application
 const app = express();
 app.use(express.json());

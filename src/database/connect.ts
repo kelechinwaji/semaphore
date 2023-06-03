@@ -7,7 +7,6 @@ const mongoURI = 'mongodb://localhost:27017/booking-system';
 const dbName = 'booking'; 
 
 
-
 // Function to establish a connection to MongoDB
 async function connectToMongo(): Promise<MongoClient> {
   try {
