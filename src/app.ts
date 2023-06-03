@@ -1,11 +1,16 @@
 import express, { Request, Response } from 'express';
+import connectToMongo from './database/connect';
+
+
 
 // Create an Express application
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// Define a route
+connectToMongo()
+
+// Define home route
 app.get('/', (req: Request, res: Response) => {
   res.send('Hello, world!');
 });
