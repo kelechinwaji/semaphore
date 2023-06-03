@@ -29,5 +29,12 @@ userSchema.pre("save", async function (next) {
   this.password = await bcrypt.hash(this.password, saltRounds);
 });
 
+// Exclude the password field from query results
+userSchema.methods.toJSON = function () {
+  const obj = this.toObject();
+  delete obj.password;
+  return obj;
+};
+
 export const User = mongoose.model("user", userSchema);
 
