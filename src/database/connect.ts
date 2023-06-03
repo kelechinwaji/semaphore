@@ -2,6 +2,7 @@ import mongoose from 'mongoose';
 
 const mongoURI = 'mongodb://localhost:27017/booking-system';
 
+//database connection function
 const connect = async () => {
   try {
     await mongoose.connect(mongoURI, {

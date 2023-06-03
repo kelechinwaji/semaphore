@@ -1,13 +1,14 @@
 import mongoose, { Schema } from "mongoose";
 import bcrypt from "bcrypt";
 
+// user type definition
 export type UserData = {
     name: string;
     email: string;
     password: string;
   }
 
-
+// user database document 
 const userSchema = new Schema<UserData>(
     {
       name: { type: String, required: true },

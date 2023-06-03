@@ -1,6 +1,8 @@
 import { Request, Response } from "express";
 import { bookingModel, Booking } from '../database/booking.models';
 
+
+//create booking 
 export const createBooking = async (req: Request, res: Response) => {
     const { userId, ticketCount } = req.body;
   
@@ -27,6 +29,7 @@ export const createBooking = async (req: Request, res: Response) => {
     }
   };
   
+  //delete booking
   export const unbookTickets = async (req: Request, res: Response) => {
     const { bookingId } = req.params;
   
