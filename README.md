@@ -48,6 +48,7 @@ The Booking App provides the following API endpoints:
 * POST /login: Log in to an existing user account.
 * POST /book: Book tickets.
 * DELETE /unbook/:bookingId: Unbook tickets.
+
 For detailed API documentation, refer to the [API Documentation](https://documenter.getpostman.com/view/19095516/2s93sW8b8j) file.
 
 Contributing
