@@ -23,7 +23,7 @@ The Booking App is built using the following technologies:
 To run the Booking App locally, follow these steps:
 
 1 Clone the repository:
-git clone https://github.com/your-username/booking-app.git
+git clone https://github.com/kelechinwaji/semaphore.git
 
 2 Navigate to the project directory:
 cd booking-app
