@@ -37,3 +37,27 @@ export const createUser = async (req: Request, res: Response) => {
     });
   }
 };
+
+
+export const authenticate = async (req: Request, res: Response) => {
+    try {
+        const user = {
+            email: req.body.email,
+            password: req.body.password,
+        };
+        const existingUser = await User.findOne({ email: user.email });
+
+        if (existingUser) {
+            const token = jwt.sign(
+                { payload: existingUser },
+                `28czklas`,
+                { expiresIn: "2h" }
+            );
+            res.status(200).json({ token, name: existingUser.name });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(400);
+        res.json(error);
+    }
+};
