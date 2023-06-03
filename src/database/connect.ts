@@ -1,25 +1,20 @@
-import { MongoClient} from 'mongodb';
+import mongoose from 'mongoose';
 
+const mongoURI = 'mongodb://localhost:27017/booking-system';
 
-// Database URI connection details
-// These details are public only for the sake of this project
-const mongoURI = 'mongodb://localhost:27017/booking-system'; 
-const dbName = 'booking'; 
-
-
-// Function to establish a connection to MongoDB
-async function connectToMongo(): Promise<MongoClient> {
+const connect = async () => {
   try {
-    const client = await MongoClient.connect(mongoURI);
-    console.log('Database connected successfully 🚀');
-
-    const db = client.db(dbName);
-
-    return client;
+    await mongoose.connect(mongoURI, {
+      serverSelectionTimeoutMS: 30000, // Increase timeout to 30 seconds
+    });
+    console.log('Connected to MongoDB successfully');
   } catch (error) {
     console.error('Error connecting to MongoDB:', error);
-    throw error;
+    process.exit(1);
   }
-}
+};
 
-export default connectToMongo;
+export default connect;
+
+
+

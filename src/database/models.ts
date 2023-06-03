@@ -19,7 +19,7 @@ const userSchema = new Schema<UserData>(
 
 
 // Password Encrypting using Bcrypt
-const saltRounds = 'thisIsSecured';
+const saltRounds = 10;
 
 // password hashing algorithm
 userSchema.pre("save", async function (next) {
